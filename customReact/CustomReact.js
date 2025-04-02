@@ -1,3 +1,7 @@
+const { JSDOM } = require('jsdom');
+const dom = new JSDOM(`<!DOCTYPE html><html><body><div id="root"></div></body></html>`);
+global.document = dom.window.document;
+
 const customRender = (reactElement, mainContainer) => {
     // const domElement = document.createElement(reactElement.type);
     // domElement.innerHTML = reactElement.children;
